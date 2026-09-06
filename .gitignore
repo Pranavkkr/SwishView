@@ -1,0 +1,41 @@
+# dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# build
+dist/
+build/
+target/
+
+# java
+*.jar
+*.war
+*.class
+
+# env
+.env
+.env.local
+
+# database
+*.db
+*.sqlite
+swishview2.db
+backend/swishview2.db
+
+# ides
+.idea/
+.vscode/
+*.iml
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# misc
+.DS_Store
+uploads/
+backend/uploads/
+logs/
