@@ -1,8 +1,9 @@
 # Build stage
 FROM maven:3.9.5-eclipse-temurin-17 AS build
 WORKDIR /app
-COPY pom.xml .
-COPY src ./src
+# Copy the backend files from the backend directory
+COPY backend/pom.xml .
+COPY backend/src ./src
 RUN mvn clean package -DskipTests
 
 # Run stage
