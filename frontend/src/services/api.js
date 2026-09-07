@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'https://swishview.onrender.com/api',
+  baseURL: import.meta.env.VITE_API_URL || 'https://swishview-1.onrender.com/api',
 });
 
 // Request interceptor — attach token
