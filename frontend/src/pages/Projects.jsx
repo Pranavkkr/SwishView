@@ -196,7 +196,7 @@ const Projects = () => {
                     </button>
                   ) : (
                     <a 
-                      href={`http://localhost:8080${project.reportFileUrl}?token=${localStorage.getItem('token')}`} 
+                      href={`${api.defaults.baseURL.replace('/api', '')}${project.reportFileUrl}?token=${localStorage.getItem('token')}`} 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="w-full text-sm bg-green-50 text-green-600 px-4 py-2.5 rounded-xl font-bold hover:bg-green-100 transition-colors shadow-sm flex items-center justify-center gap-2 border border-green-200"

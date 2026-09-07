@@ -199,9 +199,9 @@ const Tasks = () => {
                       )}
                       {task.submissionFileUrl && (
                         task.submissionFileUrl.match(/\.(jpeg|jpg|gif|png)$/i) ? (
-                          <img src={`http://localhost:8080${task.submissionFileUrl}?token=${localStorage.getItem('token')}`} alt="Proof" className="w-full rounded-lg border border-gray-200 mt-2 max-h-32 object-cover" />
+                          <img src={`${api.defaults.baseURL.replace('/api', '')}${task.submissionFileUrl}?token=${localStorage.getItem('token')}`} alt="Proof" className="w-full rounded-lg border border-gray-200 mt-2 max-h-32 object-cover" />
                         ) : (
-                          <a href={`http://localhost:8080${task.submissionFileUrl}?token=${localStorage.getItem('token')}`} target="_blank" rel="noopener noreferrer" className="inline-block bg-white border border-gray-200 px-3 py-1 rounded shadow-sm hover:bg-gray-50 mt-2">Attached File</a>
+                          <a href={`${api.defaults.baseURL.replace('/api', '')}${task.submissionFileUrl}?token=${localStorage.getItem('token')}`} target="_blank" rel="noopener noreferrer" className="inline-block bg-white border border-gray-200 px-3 py-1 rounded shadow-sm hover:bg-gray-50 mt-2">Attached File</a>
                         )
                       )}
                     </div>
@@ -253,7 +253,7 @@ const Tasks = () => {
                           )}
                           {task.reportFileUrl && (
                             <a 
-                              href={`http://localhost:8080${task.reportFileUrl}?token=${localStorage.getItem('token')}`} 
+                              href={`${api.defaults.baseURL.replace('/api', '')}${task.reportFileUrl}?token=${localStorage.getItem('token')}`} 
                               target="_blank" 
                               rel="noopener noreferrer" 
                               className="text-[11px] bg-green-50 text-green-600 px-3 py-1.5 rounded-lg font-bold hover:bg-green-100 transition-colors shadow-sm w-full flex items-center justify-center gap-1 border border-green-200"
@@ -414,14 +414,14 @@ const Tasks = () => {
                 <span className="font-bold text-gray-700 block text-sm mb-2">Attached Proof:</span>
                 <div className="bg-gray-100 rounded-xl overflow-hidden border border-gray-200">
                   {taskToVerify.submissionFileUrl.match(/\.(jpeg|jpg|gif|png)$/i) ? (
-                    <a href={`http://localhost:8080${taskToVerify.submissionFileUrl}?token=${localStorage.getItem('token')}`} target="_blank" rel="noopener noreferrer" className="cursor-zoom-in block">
-                      <img src={`http://localhost:8080${taskToVerify.submissionFileUrl}?token=${localStorage.getItem('token')}`} alt="Proof" className="w-full object-contain max-h-64 hover:opacity-90 transition-opacity" title="Click to view full size" />
+                    <a href={`${api.defaults.baseURL.replace('/api', '')}${taskToVerify.submissionFileUrl}?token=${localStorage.getItem('token')}`} target="_blank" rel="noopener noreferrer" className="cursor-zoom-in block">
+                      <img src={`${api.defaults.baseURL.replace('/api', '')}${taskToVerify.submissionFileUrl}?token=${localStorage.getItem('token')}`} alt="Proof" className="w-full object-contain max-h-64 hover:opacity-90 transition-opacity" title="Click to view full size" />
                     </a>
                   ) : taskToVerify.submissionFileUrl.match(/\.(mp4|webm|ogg)$/i) ? (
-                    <video src={`http://localhost:8080${taskToVerify.submissionFileUrl}?token=${localStorage.getItem('token')}`} controls className="w-full max-h-64"></video>
+                    <video src={`${api.defaults.baseURL.replace('/api', '')}${taskToVerify.submissionFileUrl}?token=${localStorage.getItem('token')}`} controls className="w-full max-h-64"></video>
                   ) : (
-                    <div className="p-4 text-center">
-                      <a href={`http://localhost:8080${taskToVerify.submissionFileUrl}?token=${localStorage.getItem('token')}`} target="_blank" rel="noopener noreferrer" className="inline-block bg-white border border-gray-200 px-4 py-2 rounded-lg font-bold text-crewix-accent shadow-sm hover:bg-gray-50 transition-colors">
+                    <div className="flex items-center justify-center p-8 bg-gray-50 rounded-lg border border-dashed border-gray-300">
+                      <a href={`${api.defaults.baseURL.replace('/api', '')}${taskToVerify.submissionFileUrl}?token=${localStorage.getItem('token')}`} target="_blank" rel="noopener noreferrer" className="inline-block bg-white border border-gray-200 px-4 py-2 rounded-lg font-bold text-crewix-accent shadow-sm hover:bg-gray-50 transition-colors">
                         Download / View File
                       </a>
                     </div>
